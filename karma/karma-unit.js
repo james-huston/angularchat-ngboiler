@@ -55,6 +55,6 @@ autoWatch = false;
  * the aesthetic advantage of not launching a browser every time you save.
  */
 browsers = [
-  'Firefox'
+  'Chrome'
 ];
 
