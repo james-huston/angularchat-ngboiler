@@ -11,6 +11,8 @@ files = [
   JASMINE_ADAPTER,
   'build/angular/angular.js',
   'build/angular/angular-mocks.js',
+  'vendor/angular-local-storage/angular-local-storage.js',
+  'vendor/socket.io-client/dist/socket.io.js',
   'src/**/*.js',
   'dist/tmp/**/*.js',
   'vendor/placeholders/*.js',

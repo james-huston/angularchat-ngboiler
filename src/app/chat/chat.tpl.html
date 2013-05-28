@@ -1,0 +1,15 @@
+<style type="text/css">
+.chatContainer {
+	border: 2px solid #666;
+	height: 200px;
+	width: 400px;
+	overflow: scroll;
+}
+</style>
+
+<div ng-model="chatContainer" class="chatContainer">
+	<div ng-repeat="message in chatMessages">
+	{{message.user}}: {{message.message}}
+	</div>
+</div>
+<input ng-model="newMessage" /><button ng-click="postMessage()" >Send</button>

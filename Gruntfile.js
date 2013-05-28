@@ -146,7 +146,9 @@ module.exports = function ( grunt ) {
        */
       libs: {
         src: [ 
-          'build/angular/angular.js'
+          'build/angular/angular.js',
+          'vendor/angular-local-storage/angular-local-storage.js',
+          'vendor/socket.io-client/dist/socket.io.js'
         ],
         dest: '<%= distdir %>/assets/libs.js'
       }
@@ -360,7 +362,7 @@ module.exports = function ( grunt ) {
       unittest: {
         files: [
           '<%= src.unit %>'
-        ],
+       ],
         tasks: [ 'jshint:test', 'karma:unit:run' ],
         options: {
           livereload: false
@@ -377,7 +379,8 @@ module.exports = function ( grunt ) {
    * before watching for changes.
    */
   grunt.renameTask( 'watch', 'delta' );
-  grunt.registerTask( 'watch', [ 'default', 'karma:unit', 'delta' ] );
+  //grunt.registerTask( 'watch', [ 'default', 'karma:unit', 'delta' ] );
+  grunt.registerTask( 'watch', [ 'default', 'delta' ] );
 
   /**
    * The default task is to build.
