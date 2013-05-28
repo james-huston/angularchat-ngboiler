@@ -146,6 +146,7 @@ module.exports = function ( grunt ) {
        */
       libs: {
         src: [ 
+          'vendor/jquery/jquery.js',
           'build/angular/angular.js',
           'vendor/angular-local-storage/angular-local-storage.js',
           'vendor/socket.io-client/dist/socket.io.js'

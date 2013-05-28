@@ -7,7 +7,9 @@ angular.module( 'rvchatapp',
     'ngBoilerplate.about',
     'ui.route',
     'rvchatapp.chathome',
-    'rvchatapp.chat'
+    'rvchatapp.chat',
+    'service.socketio',
+    'directives.autofocuselement'
   ]
 )
 
