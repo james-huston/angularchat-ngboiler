@@ -9,7 +9,8 @@ angular.module( 'rvchatapp',
     'rvchatapp.chathome',
     'rvchatapp.chat',
     'service.socketio',
-    'directives.autofocuselement'
+    'directives.autofocuselement',
+    'directives.autoscroll'
   ]
 )
 

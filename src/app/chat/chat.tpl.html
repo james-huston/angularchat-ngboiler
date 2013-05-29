@@ -7,7 +7,7 @@
 }
 </style>
 
-<div ng-model="chatContainer" class="chatContainer">
+<div ng-model="chatContainer" class="chatContainer" autoscroll-down>
 	<div ng-repeat="message in chatMessages">
 	{{message.user}}: {{message.message}}
 	</div>
