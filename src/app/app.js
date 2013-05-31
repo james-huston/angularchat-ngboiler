@@ -2,13 +2,8 @@ angular.module( 'rvchatapp',
   [
     'LocalStorageModule',
     'app-templates',
-    'component-templates',
-    'ngBoilerplate.home',
-    'ngBoilerplate.about',
-    'ui.route',
     'rvchatapp.chathome',
     'rvchatapp.chat',
-    'service.socketio',
     'directives.autofocuselement',
     'directives.autoscroll',
     'providers.socketio'
@@ -32,8 +27,8 @@ angular.module( 'rvchatapp',
   socketioProvider.setSocketServer(config.test.socketServer);
 })
 
-.run( function run ( titleService ) {
-  titleService.setSuffix( ' | ngBoilerplate' );
+.run( function run () {
+
 })
 
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
