@@ -28,7 +28,7 @@ var UserController = {
 app.get('/api/user/:username', UserController.get);
 
 server.listen(port, function () {
-  console.log('Now serving the app at http://localhost:' + port + config.server.distFolder);
+  console.log('Now serving the app at http://localhost:' + port + '/index.html');
 });
 
 io.sockets.on('connection', function (socket) {
