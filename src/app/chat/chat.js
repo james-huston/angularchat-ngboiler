@@ -1,4 +1,4 @@
-angular.module('rvchatapp.chat', ['ui.bootstrap', 'service.socketio'])
+angular.module('rvchatapp.chat', ['ui.bootstrap', 'providers.socketio'])
 
 .config(function ($routeProvider) {
   $routeProvider.when('/chat', {
@@ -7,7 +7,7 @@ angular.module('rvchatapp.chat', ['ui.bootstrap', 'service.socketio'])
   });
 })
 
-.controller('ChatCtrl', function($scope, $location, localStorageService, socket) {
+.controller('ChatCtrl', function($scope, $location, localStorageService, socketio, chatConfig) {
   checkUser($scope, localStorageService);
 
   $scope.chatMessages = [];
@@ -22,7 +22,7 @@ angular.module('rvchatapp.chat', ['ui.bootstrap', 'service.socketio'])
     $scope.newMessage = '';
   };
 
-  socket.on('message.broadcast', function (data) {
+  socketio.on('message.broadcast', function (data) {
     receiveMessage(data, $scope);
   });
 
@@ -34,7 +34,7 @@ angular.module('rvchatapp.chat', ['ui.bootstrap', 'service.socketio'])
     };
 
     $scope.chatMessages.push(message);
-    socket.emit('message.new', message);
+    socketio.emit('message.new', message);
   }
 
   function checkUser($scope, localStorageService) {
@@ -70,7 +70,7 @@ angular.module('rvchatapp.chat', ['ui.bootstrap', 'service.socketio'])
     }
 
     $scope.chatMessages.push(data);
-    $scope.$apply();
+    // $scope.$apply();
   }
 
 });

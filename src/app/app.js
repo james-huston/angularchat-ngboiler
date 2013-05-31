@@ -10,17 +10,30 @@ angular.module( 'rvchatapp',
     'rvchatapp.chat',
     'service.socketio',
     'directives.autofocuselement',
-    'directives.autoscroll'
+    'directives.autoscroll',
+    'providers.socketio'
   ]
 )
 
-.config( function myAppConfig ( $routeProvider ) {
+.value('chatConfig', {
+  test: {
+    socketServer: 'http://localhost:3000'
+  },
+  production: {
+    socketServer: 'http://localhost:3000'
+  }
+})
+
+.config( function myAppConfig ( $routeProvider, $provide, socketioProvider, chatConfigProvider ) {
   $routeProvider.otherwise({ redirectTo: '/chathome' });
+
+  var config = chatConfigProvider.$get();
+
+  socketioProvider.setSocketServer(config.test.socketServer);
 })
 
 .run( function run ( titleService ) {
   titleService.setSuffix( ' | ngBoilerplate' );
-
 })
 
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
