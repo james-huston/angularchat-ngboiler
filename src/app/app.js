@@ -2,10 +2,13 @@ angular.module( 'rvchatapp',
   [
     'LocalStorageModule',
     'app-templates',
+    'directives-templates',
     'rvchatapp.chathome',
     'rvchatapp.chat',
+    'rvchatapp.dualchat',
     'directives.autofocuselement',
     'directives.autoscroll',
+    'directives.chatbox',
     'providers.socketio'
   ]
 )

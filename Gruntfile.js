@@ -64,6 +64,7 @@ module.exports = function ( grunt ) {
       js: [ 'src/**/*.js', '!src/**/*.spec.js' ], 
       atpl: [ 'src/app/**/*.tpl.html' ],
       ctpl: [ 'src/components/**/*.tpl.html' ],
+      dtpl: [ 'src/directives/**/*.tpl.html' ],
       tpljs: [ '<%= distdir %>/tmp/**/*.js' ],
       html: [ 'src/index.html' ],
       less: 'src/less/main.less',
@@ -255,6 +256,12 @@ module.exports = function ( grunt ) {
         src: [ '<%= src.ctpl %>' ],
         base: 'src/components',
         dest: 'dist/tmp'
+      },
+
+      directives: {
+        src: [ '<%= src.dtpl %>' ],
+        base: 'src/directives',
+        dest: 'dist/tmp'
       }
     },
 
@@ -342,7 +349,8 @@ module.exports = function ( grunt ) {
       tpls: {
         files: [ 
           '<%= src.atpl %>', 
-          '<%= src.ctpl %>'
+          '<%= src.ctpl %>',
+          '<%= src.dtpl %>'
         ],
         tasks: [ 'html2js', 'concat:dist', 'ngmin:dist', 'uglify:dist' ]
       },

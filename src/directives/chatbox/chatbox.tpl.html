@@ -1,0 +1,19 @@
+<style type="text/css">
+.chatContainer {
+	border: 2px solid #666;
+	height: 200px;
+	width: 400px;
+	overflow: scroll;
+}
+</style>
+
+<form name="chatForm_{{session}}">
+	<div ng-model="chatContainer{{session}}" class="chatContainer" autoscroll-down>
+		<div ng-repeat="message in chatMessages">
+		{{message.user}}: {{message.message}}
+		</div>
+	</div>
+	<div>
+		<input ng-model="newMessage" class="inputNewMessage{{session}}" /><button ng-click="postMessage()" autofocuselement=".inputNewMessage{{session}}" >Send</button>
+	</div>
+</form>
