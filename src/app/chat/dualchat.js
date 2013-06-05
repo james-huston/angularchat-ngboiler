@@ -7,6 +7,8 @@ angular.module('rvchatapp.dualchat', [])
   });
 })
 
-.controller('DualChatCtrl', function () {
-
+.controller('DualChatCtrl', function ($scope) {
+  $scope.localChatConfig = {
+    user: 'blarg'
+  };
 });

@@ -14,6 +14,7 @@
 		</div>
 	</div>
 	<div>
-		<input ng-model="newMessage" class="inputNewMessage" /><button ng-click="postMessage()" autofocuselement=".inputNewMessage" >Send</button>
+		<input ng-model="newMessage.body" class="inputNewMessage" /><button ng-click="postMessage()" autofocuselement="newMessage.body" >Send</button>
 	</div>
 </form>
+{{foo}}

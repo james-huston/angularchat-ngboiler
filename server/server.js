@@ -33,7 +33,7 @@ server.listen(port, function () {
 
 io.sockets.on('connection', function (socket) {
   socket.on('message.new', function (data) {
-    socket.broadcast.emit('message.broadcast', data);
+    socket.emit('message.broadcast', data);
     socket.emit('message.received', {time: Date.now()});
   })
 });

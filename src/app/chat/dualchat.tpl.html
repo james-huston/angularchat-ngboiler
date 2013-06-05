@@ -1,5 +1,3 @@
-<div ng-include src="chat/chat.tpl.html" ng-controller="ChatCtrl"></div>
+<div style="float: right;" ng-include src="'chat/chat.tpl.html'" ng-controller="ChatCtrl" ng-init="init({username: 'bob'});foo=true; bar={random: true};"  ></div>
 
-
-<div ng-include src="chat/chat.tpl.html" ng-controller="ChatCtrl"></div>
-
+<div ng-include src="'chat/chat.tpl.html'" ng-controller="ChatCtrl" ng-init="init({username: 'james'});foo=true; bar={random: true};"  ></div>
